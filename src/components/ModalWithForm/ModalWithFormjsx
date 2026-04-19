@@ -1,0 +1,50 @@
+import "./ModalWithForm.css";
+
+function ModalWithForm({
+  isOpen,
+  onClose,
+  title,
+  name,
+  buttonText,
+  children,
+  onSubmit,
+}) {
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("modal")) {
+      onClose();
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (onSubmit) {
+      onSubmit(e);
+    }
+  };
+
+  return (
+    <div
+      className={`modal modal_type_${name} ${isOpen ? "modal_is-opened" : ""}`}
+      onClick={handleOverlayClick}
+    >
+      <div className="modal__content">
+        <h2 className="modal__title">{title}</h2>
+        <button
+          className="modal__close-btn"
+          onClick={onClose}
+          type="button"
+        >
+          ✕
+        </button>
+        <form className="modal__form" name={name} onSubmit={handleFormSubmit}>
+          {children}
+          <button className="modal__submit-btn" type="submit">
+            {buttonText}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default ModalWithForm;

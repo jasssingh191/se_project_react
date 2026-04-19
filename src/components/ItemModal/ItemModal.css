@@ -1,0 +1,118 @@
+/* Item Modal Overlay */
+.item-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  z-index: 101;
+}
+
+.item-modal_is-opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Item Modal Content */
+.item-modal__content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.item-modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #999;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.item-modal__close-btn:hover {
+  color: #000;
+}
+
+/* Item Modal Image */
+.item-modal__image-container {
+  flex: 0 0 200px;
+  aspect-ratio: 1;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Item Modal Details */
+.item-modal__details {
+  flex: 1;
+}
+
+.item-modal__name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #000;
+}
+
+.item-modal__weather {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.item-modal__weather-type {
+  font-weight: 700;
+  color: #000;
+  text-transform: capitalize;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .item-modal__content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .item-modal__image-container {
+    flex: 0 0 250px;
+    width: 100%;
+  }
+
+  .item-modal__name {
+    font-size: 20px;
+  }
+}
