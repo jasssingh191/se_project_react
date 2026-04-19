@@ -1,41 +1,34 @@
 import { useState, useEffect } from "react";
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
-import ModalWithForm from "./ModalWithForm";
-import ItemModal from "./ItemModal";
-import { getWeather } from "../utils/weatherApi";
-import { LOCATION_COORDS } from "../utils/constants";
-import { defaultClothingItems } from "../utils/clothingItems";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import ItemModal from "../ItemModal/ItemModal";
+import { getWeather } from "../../utils/weatherApi";
+import { LOCATION_COORDS } from "../../utils/constants";
+import { defaultClothingItems } from "../../utils/clothingItems";
 import "./App.css";
 
 function App() {
-  // Weather state
   const [weatherData, setWeatherData] = useState({
-    city: "Portland",
-    temperature: 70,
+    city: "New York",
+    temperature: 75,
+    type: "hot",
     condition: "Clear",
-    description: "clear sky",
+    icon: "02d",
   });
 
-  // Clothing items state
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-
-  // Modal states
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
 
-  // Fetch weather on component mount
   useEffect(() => {
     getWeather(LOCATION_COORDS.latitude, LOCATION_COORDS.longitude)
       .then((data) => setWeatherData(data))
       .catch((error) => console.error("Failed to fetch weather:", error));
   }, []);
 
-  // Modal handlers
-  const handleOpenAddClothesModal = () => {
-    setActiveModal("add-clothes");
-  };
+  const handleOpenAddClothesModal = () => setActiveModal("add-clothes");
 
   const handleOpenItemModal = (card) => {
     setSelectedCard(card);
@@ -47,23 +40,18 @@ function App() {
     setSelectedCard(null);
   };
 
-  // Close modal on escape key or overlay click
   useEffect(() => {
     if (!activeModal) return;
-
     const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        handleCloseModal();
-      }
+      if (e.key === "Escape") handleCloseModal();
     };
-
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
   }, [activeModal]);
 
   return (
     <div className="app">
-      <Header onAddClothesClick={handleOpenAddClothesModal} />
+      <Header weatherData={weatherData} onAddClothesClick={handleOpenAddClothesModal} />
       <Main
         weatherData={weatherData}
         clothingItems={clothingItems}
@@ -77,9 +65,7 @@ function App() {
         title="New Garment"
         name="add-clothes"
         buttonText="Add garment"
-      >
-        {/* Form inputs will go here */}
-      </ModalWithForm>
+      />
 
       <ItemModal
         isOpen={activeModal === "item-details"}
