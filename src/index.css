@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
   box-sizing: border-box;
 }
@@ -26,7 +25,6 @@ body {
   flex-direction: column;
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -40,58 +38,24 @@ p {
   margin: 0;
 }
 
-/* Links */
-a {
-  color: #000;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: #666;
-}
-
-/* Buttons */
 button {
   font-family: inherit;
 }
 
-/* Forms */
 input,
 textarea,
 select {
   font-family: inherit;
 }
 
-/* Lists */
 ul,
 ol {
   margin: 0;
   padding: 0;
 }
 
-/* Images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* Scrollbar styling (optional) */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }

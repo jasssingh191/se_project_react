@@ -1,12 +1,4 @@
-
-function Header() {
-    return <header className="header">
-        <img className="header__logo"/>
-    </header>;
-    
-}
-
-export default Header;import "./Header.css";
+import "./Header.css";
 
 function Header({ onAddClothesClick }) {
   // Generate current date
@@ -25,10 +17,7 @@ function Header({ onAddClothesClick }) {
         <p className="header__location">Portland</p>
       </div>
       <div className="header__bottom">
-        <button
-          className="header__add-clothes-btn"
-          onClick={onAddClothesClick}
-        >
+        <button className="header__add-clothes-btn" onClick={onAddClothesClick}>
           + Add clothes
         </button>
         <div className="header__user-section">

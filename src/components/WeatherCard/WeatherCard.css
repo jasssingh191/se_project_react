@@ -1,4 +1,3 @@
-/* Weather Card */
 .weather-card {
   display: flex;
   align-items: center;
@@ -36,20 +35,6 @@
   min-width: 120px;
 }
 
-/* Weather-based variations (optional) */
-.weather-card--hot {
-  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
-}
-
-.weather-card--warm {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.weather-card--cold {
-  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
   .weather-card {
     flex-direction: column;
