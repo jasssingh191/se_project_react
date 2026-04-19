@@ -29,11 +29,7 @@ function ModalWithForm({
     >
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
-        <button
-          className="modal__close-btn"
-          onClick={onClose}
-          type="button"
-        >
+        <button className="modal__close-btn" onClick={onClose} type="button">
           ✕
         </button>
         <form className="modal__form" name={name} onSubmit={handleFormSubmit}>
@@ -46,5 +42,3 @@ function ModalWithForm({
     </div>
   );
 }
-
-export default ModalWithForm;

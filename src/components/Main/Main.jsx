@@ -1,11 +1,9 @@
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
 import "./Main.css";
+import { getWeatherCondition } from "../utils/weatherApi";
 
 function Main({ weatherData, clothingItems, onCardClick }) {
-  // Import weather condition function to filter items
-  const { getWeatherCondition } = require("../utils/weatherApi");
-
   // Filter clothing items based on current weather
   const currentWeather = getWeatherCondition(weatherData.temperature);
   const filteredItems = clothingItems.filter(

@@ -5,7 +5,9 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p className="footer__text">© {currentYear} WTWR. All rights reserved.</p>
+      <p className="footer__text">
+        © {currentYear} Developed by Jaspreet Singh.
+      </p>
     </footer>
   );
 }

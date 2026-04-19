@@ -1,8 +1,9 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
-import ModalWithForm from "./components/ModalWithForm";
-import ItemModal from "./components/ItemModal";
+import { useState, useEffect } from "react";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import ModalWithForm from "./ModalWithForm";
+import ItemModal from "./ItemModal";
 import { getWeather } from "../utils/weatherApi";
 import { LOCATION_COORDS } from "../utils/constants";
 import { defaultClothingItems } from "../utils/clothingItems";
