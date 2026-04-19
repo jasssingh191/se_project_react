@@ -1,26 +1,21 @@
-import WeatherCard from "./WeatherCard";
-import ItemCard from "./ItemCard";
 import "./Main.css";
-import { getWeatherCondition } from "../utils/weatherApi";
+import WeatherCard from "../WeatherCard/WeatherCard";
+import ItemCard from "../ItemCard/ItemCard";
 
 function Main({ weatherData, clothingItems, onCardClick }) {
-  // Filter clothing items based on current weather
-  const currentWeather = getWeatherCondition(weatherData.temperature);
-  const filteredItems = clothingItems.filter(
-    (item) => item.weather.toLowerCase() === currentWeather,
-  );
-
   return (
     <main className="main">
       <WeatherCard weatherData={weatherData} />
       <section className="items">
-        <h2 className="items__title">
-          Today is {weatherData.temperature}°F / You might want to wear:
-        </h2>
+        <p className="items__text">
+          Today is {weatherData.temperature}&deg; F / You may want to wear:
+        </p>
         <ul className="items__list">
-          {filteredItems.map((item) => (
-            <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
-          ))}
+          {clothingItems
+            .filter((item) => item.weather === weatherData.type)
+            .map((item) => (
+              <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+            ))}
         </ul>
       </section>
     </main>

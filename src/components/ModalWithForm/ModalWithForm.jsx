@@ -42,3 +42,5 @@ function ModalWithForm({
     </div>
   );
 }
+
+export default ModalWithForm;
