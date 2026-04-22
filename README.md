@@ -2,16 +2,17 @@
 
 Real-time weather data from OpenWeather API Smart clothing recommendations (Hot/Warm/Cold) Add and view custom clothing items Fully responsive design Modern UI with Cabinet Grotesk font
 
-Tech Stack
+# Tech Stack
 
 - React 18
 - Vite
 - CSS3 (Flexbox & Grid)
 - OpenWeather API
 
-Temperature Recommendations
+# Temperature Recommendations
 
 - Hot (≥86°F) - Light, breathable clothing
 - Warm (66-85°F) - Casual outfits
 - Cold (<66°F) - Warm, layered clothing
-- Happy Weather Dressing! 👕⛅
+
+Happy Weather Dressing! 👕⛅
