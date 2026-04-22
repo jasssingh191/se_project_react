@@ -1,8 +1,24 @@
-# React + Vite
+⛅ WTWR - What to Wear?
+A React weather app that recommends clothing based on current conditions. Built with Vite, React, and OpenWeather API.
+Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Real-time weather data from OpenWeather API
+Smart clothing recommendations (Hot/Warm/Cold)
+Add and view custom clothing items
+Fully responsive design
+Modern UI with Cabinet Grotesk font
 
-Currently, two official plugins are available:
+Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React 18
+Vite
+CSS3 (Flexbox & Grid)
+OpenWeather API
+
+Temperature Recommendations
+
+Hot (≥86°F) - Light, breathable clothing
+Warm (66-85°F) - Casual outfits
+Cold (<66°F) - Warm, layered clothing
+
+Happy Weather Dressing! 👕⛅
