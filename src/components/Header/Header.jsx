@@ -12,13 +12,15 @@ function Header({ weatherData, onAddClothesClick }) {
     <header className="header">
       <div className="header__left">
         <img src={logo} alt="WTWR" className="header__logo" />
-        <p className="header__date">{currentDate}, {weatherData.city}</p>
+        <p className="header__date">
+          {currentDate}, {weatherData.city}
+        </p>
       </div>
-      <div className="header__right">
-        <button className="header__add-clothes-btn" onClick={onAddClothesClick}>
-          + Add clothes
-        </button>
-        <p className="header__user-name">Terrence Tegegne</p>
+      <button className="header__add-clothes-btn" onClick={onAddClothesClick}>
+        + Add clothes
+      </button>
+      <div className="header__user-container">
+        <p className="header__username">Terrence Tegegne</p>
         <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
       </div>
     </header>
