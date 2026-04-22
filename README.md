@@ -9,16 +9,14 @@ Fully responsive design
 Modern UI with Cabinet Grotesk font
 
 Tech Stack
-
-React 18
-Vite
-CSS3 (Flexbox & Grid)
-OpenWeather API
+- React 18
+- Vite
+- CSS3 (Flexbox & Grid)
+- OpenWeather API
 
 Temperature Recommendations
-
-Hot (≥86°F) - Light, breathable clothing
-Warm (66-85°F) - Casual outfits
-Cold (<66°F) - Warm, layered clothing
+- Hot (≥86°F) - Light, breathable clothing
+- Warm (66-85°F) - Casual outfits
+- Cold (<66°F) - Warm, layered clothing
 
 Happy Weather Dressing! 👕⛅
