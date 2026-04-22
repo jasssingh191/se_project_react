@@ -73,8 +73,8 @@ function App() {
           <input
             className="modal__input"
             type="text"
-            name="name"
             placeholder="Name"
+            required
           />
         </label>
         <label className="modal__label">
@@ -84,6 +84,7 @@ function App() {
             type="url"
             name="imageUrl"
             placeholder="Image URL"
+            required
           />
         </label>
         <fieldset className="modal__fieldset">
@@ -95,6 +96,7 @@ function App() {
               name="weatherType"
               value="hot"
               defaultChecked
+              required
             />
             Hot
           </label>

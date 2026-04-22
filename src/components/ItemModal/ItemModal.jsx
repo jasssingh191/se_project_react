@@ -1,4 +1,5 @@
 import "./ItemModal.css";
+import closeBtn from "../../assets/close-btn.png";
 
 function ItemModal({ isOpen, card, onClose }) {
   if (!card) {
@@ -22,7 +23,7 @@ function ItemModal({ isOpen, card, onClose }) {
           onClick={onClose}
           type="button"
         >
-          ✕
+          <img src={closeBtn} alt="Close" />
         </button>
         <div className="item-modal__image-container">
           <img src={card.link} alt={card.name} className="item-modal__image" />
