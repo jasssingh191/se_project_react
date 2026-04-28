@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import "./WeatherCard.css";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import sunnyDay from "../../assets/sunny-day.png";
 import sunnyNight from "../../assets/sunny-night.png";
 import cloudyDay from "../../assets/cloudy-day.png";
@@ -34,11 +36,14 @@ const weatherImageMap = {
 };
 
 function WeatherCard({ weatherData }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const image = weatherImageMap[weatherData.icon];
 
   return (
     <section className="weather-card">
-      <p className="weather-card__temp">{weatherData.temperature} &deg;F</p>
+      <p className="weather-card__temp">
+        {weatherData.temperature[currentTemperatureUnit]} &deg;{currentTemperatureUnit}
+      </p>
       {image && (
         <img
           className="weather-card__image"

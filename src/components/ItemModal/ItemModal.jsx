@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import closeBtn from "../../assets/close-btn.png";
 
-function ItemModal({ isOpen, card, onClose }) {
+function ItemModal({ isOpen, card, onClose, onDeleteClick }) {
   if (!card) {
     return null;
   }
@@ -34,6 +34,13 @@ function ItemModal({ isOpen, card, onClose }) {
             Weather:{" "}
             <span className="item-modal__weather-type">{card.weather}</span>
           </p>
+          <button
+            className="item-modal__delete-btn"
+            onClick={onDeleteClick}
+            type="button"
+          >
+            Delete item
+          </button>
         </div>
       </div>
     </div>

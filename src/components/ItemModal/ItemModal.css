@@ -98,6 +98,23 @@
   text-transform: capitalize;
 }
 
+.item-modal__delete-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: #ff4040;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.item-modal__delete-btn:hover {
+  opacity: 0.7;
+}
+
 @media (max-width: 768px) {
   .item-modal__content {
     flex-direction: column;

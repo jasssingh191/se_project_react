@@ -7,11 +7,14 @@ function getWeatherCondition(temperature) {
 }
 
 function extractWeatherData(data) {
-  const temperature = Math.round(data.main.temp);
+  const tempF = Math.round(data.main.temp);
   return {
     city: data.name,
-    temperature,
-    type: getWeatherCondition(temperature),
+    temperature: {
+      F: tempF,
+      C: Math.round((tempF - 32) * (5 / 9)),
+    },
+    type: getWeatherCondition(tempF),
     condition: data.weather[0].main,
     icon: data.weather[0].icon,
   };

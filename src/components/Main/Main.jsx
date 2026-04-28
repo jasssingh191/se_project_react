@@ -1,14 +1,18 @@
+import { useContext } from "react";
 import "./Main.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 function Main({ weatherData, clothingItems, onCardClick }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+
   return (
     <main className="main">
       <WeatherCard weatherData={weatherData} />
       <section className="items">
         <p className="items__text">
-          Today is {weatherData.temperature} &deg; F / You may want to wear:
+          Today is {weatherData.temperature[currentTemperatureUnit]} &deg;{currentTemperatureUnit} / You may want to wear:
         </p>
         <ul className="items__list">
           {clothingItems

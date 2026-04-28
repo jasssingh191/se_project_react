@@ -1,0 +1,22 @@
+.sidebar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  align-self: flex-start;
+  padding-top: 40px;
+}
+
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.sidebar__username {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}

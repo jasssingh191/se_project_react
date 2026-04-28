@@ -1,0 +1,61 @@
+.toggle-switch {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.toggle-switch__input {
+  display: none;
+  left: 9px;
+  right: 9px;
+}
+
+.toggle-switch__track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 56px;
+  height: 28px;
+  background-color: #ffffff;
+  border: 2px solid #7e7e7e;
+  border-radius: 20px;
+  padding: 4px 6px;
+  box-sizing: border-box;
+}
+
+.toggle-switch__thumb {
+  position: absolute;
+  left: -1px;
+  width: 28px;
+  height: 28px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+
+.toggle-switch__input:checked + .toggle-switch__track .toggle-switch__thumb {
+  left: 25px;
+}
+
+.toggle-switch__label {
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: #888;
+  width: 14px;
+  text-align: center;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.toggle-switch__input:not(:checked)
+  + .toggle-switch__track
+  .toggle-switch__label_f {
+  color: #fff;
+}
+
+.toggle-switch__input:checked + .toggle-switch__track .toggle-switch__label_c {
+  color: #fff;
+}

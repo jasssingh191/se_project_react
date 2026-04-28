@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: none;
   padding: 32px 0 28px;
 }
 
@@ -10,6 +9,8 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .header__logo {
@@ -23,10 +24,23 @@
   margin: 0;
 }
 
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .header__user-container {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
 }
 
 .header__add-clothes-btn {
@@ -38,7 +52,6 @@
   color: #000;
   cursor: pointer;
   padding: 0;
-  margin: 0 20px 0 auto;
 }
 
 .header__add-clothes-btn:hover {
@@ -56,5 +69,4 @@
   width: 40px;
   height: 40px;
   object-fit: cover;
-  border-color: #00000080;
 }

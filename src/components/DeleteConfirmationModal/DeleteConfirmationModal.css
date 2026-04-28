@@ -1,0 +1,103 @@
+.delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 102;
+}
+
+.delete-modal_opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+.delete-modal__content {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 48px 40px;
+  max-width: 430px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.delete-modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-modal__close-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.delete-modal__close-btn:hover {
+  opacity: 0.7;
+}
+
+.delete-modal__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.delete-modal__subtitle {
+  font-size: 16px;
+  color: #000;
+  margin: 0 0 8px;
+}
+
+.delete-modal__confirm-btn {
+  background: none;
+  border: none;
+  color: #ff4040;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  margin-top: 8px;
+}
+
+.delete-modal__confirm-btn:hover {
+  opacity: 0.7;
+}
+
+.delete-modal__cancel-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+.delete-modal__cancel-btn:hover {
+  opacity: 0.7;
+}
