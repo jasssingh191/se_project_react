@@ -29,13 +29,13 @@ function App() {
   useEffect(() => {
     getWeather(LOCATION_COORDS.latitude, LOCATION_COORDS.longitude)
       .then((data) => setWeatherData(data))
-      .catch((error) => console.error("Failed to fetch weather:", error));
+      .catch((error) => import.meta.env.DEV && console.error("Failed to fetch weather:", error));
   }, []);
 
   useEffect(() => {
     getItems()
       .then((items) => setClothingItems(items))
-      .catch((error) => console.error("Failed to fetch items:", error));
+      .catch((error) => import.meta.env.DEV && console.error("Failed to fetch items:", error));
   }, []);
 
   useEffect(() => {
@@ -70,20 +70,20 @@ function App() {
   const handleAddItem = (item, resetForm) => {
     addItem(item)
       .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+        setClothingItems((prev) => [newItem, ...prev]);
         handleCloseModal();
         resetForm();
       })
-      .catch((error) => console.error("Failed to add item:", error));
+      .catch((error) => import.meta.env.DEV && console.error("Failed to add item:", error));
   };
 
   const handleDeleteItem = (card) => {
     deleteItem(card._id)
       .then(() => {
-        setClothingItems(clothingItems.filter((item) => item._id !== card._id));
+        setClothingItems((prev) => prev.filter((item) => item._id !== card._id));
         handleCloseModal();
       })
-      .catch((error) => console.error("Failed to delete item:", error));
+      .catch((error) => import.meta.env.DEV && console.error("Failed to delete item:", error));
   };
 
   return (

@@ -26,7 +26,7 @@ function ItemModal({ isOpen, card, onClose, onDeleteClick }) {
           <img src={closeBtn} alt="Close" />
         </button>
         <div className="item-modal__image-container">
-          <img src={card.link} alt={card.name} className="item-modal__image" />
+          <img src={card.imageUrl} alt={card.name} className="item-modal__image" />
         </div>
         <div className="item-modal__details">
           <h2 className="item-modal__name">{card.name}</h2>

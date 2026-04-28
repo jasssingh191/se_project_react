@@ -1,4 +1,5 @@
 import { WEATHER_API_KEY, LOCATION_COORDS } from "./constants";
+import { checkResponse } from "./request";
 
 function getWeatherCondition(temperature) {
   if (temperature >= 86) return "hot";
@@ -20,14 +21,9 @@ function extractWeatherData(data) {
   };
 }
 
-async function getWeather(latitude, longitude) {
+function getWeather(latitude, longitude) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${WEATHER_API_KEY}`;
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Weather API error: ${response.status}`);
-  }
-  const data = await response.json();
-  return extractWeatherData(data);
+  return fetch(url).then(checkResponse).then(extractWeatherData);
 }
 
 export { getWeatherCondition, getWeather };

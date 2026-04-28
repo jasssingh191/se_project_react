@@ -1,18 +1,16 @@
-const baseUrl = "http://localhost:3001";
+import { checkResponse } from "./request";
 
-function checkResponse(res) {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-}
+const baseUrl = "http://localhost:3001";
 
 export function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
-export function addItem({ name, link, weather }) {
+export function addItem({ name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, link, weather }),
+    body: JSON.stringify({ name, imageUrl, weather }),
   }).then(checkResponse);
 }
 
