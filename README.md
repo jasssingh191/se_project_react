@@ -16,6 +16,10 @@ This runs `json-server --watch db.json --id _id --port 3001`. The `--id _id` fla
 ```bash
 npm run dev
 ```
+## Project Pitch Video
+ 
+ Check out [this video](https://drive.google.com/file/d/1ZPrl44adUbryscwPxmeRDKwomLMZC-rI/view?usp=drive_link), where I describe my 
+ project and some challenges I faced while building it.
 
 # Tech Stack
 
