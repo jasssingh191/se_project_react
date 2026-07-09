@@ -1,10 +1,19 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../../assets/logo.svg";
-import avatar from "../../assets/avatar.png";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import Avatar from "../Avatar/Avatar";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function Header({ weatherData, onAddClothesClick }) {
+function Header({
+  weatherData,
+  isLoggedIn,
+  onAddClothesClick,
+  onRegisterClick,
+  onLoginClick,
+}) {
+  const currentUser = useContext(CurrentUserContext);
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -21,14 +30,35 @@ function Header({ weatherData, onAddClothesClick }) {
       <div className="header__right">
         <div className="header__controls">
           <ToggleSwitch />
-          <button className="header__add-clothes-btn" onClick={onAddClothesClick}>
-            + Add clothes
-          </button>
+          {isLoggedIn && (
+            <button className="header__add-clothes-btn" onClick={onAddClothesClick}>
+              + Add clothes
+            </button>
+          )}
         </div>
-        <Link to="/profile" className="header__user-container">
-          <p className="header__username">Terrence Tegegne</p>
-          <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
-        </Link>
+        {isLoggedIn ? (
+          <Link to="/profile" className="header__user-container">
+            <p className="header__username">{currentUser?.name}</p>
+            <Avatar user={currentUser} className="header__avatar" />
+          </Link>
+        ) : (
+          <div className="header__auth-buttons">
+            <button
+              className="header__auth-btn"
+              onClick={onRegisterClick}
+              type="button"
+            >
+              Sign up
+            </button>
+            <button
+              className="header__auth-btn"
+              onClick={onLoginClick}
+              type="button"
+            >
+              Log in
+            </button>
+          </div>
+        )}
       </div>
     </header>
   );

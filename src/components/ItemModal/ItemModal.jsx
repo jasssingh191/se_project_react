@@ -1,10 +1,16 @@
+import { useContext } from "react";
 import "./ItemModal.css";
 import closeBtn from "../../assets/close-btn.png";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function ItemModal({ isOpen, card, onClose, onDeleteClick }) {
+  const currentUser = useContext(CurrentUserContext);
+
   if (!card) {
     return null;
   }
+
+  const isOwn = Boolean(currentUser && card.owner === currentUser._id);
 
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("item-modal")) {
@@ -34,13 +40,15 @@ function ItemModal({ isOpen, card, onClose, onDeleteClick }) {
             Weather:{" "}
             <span className="item-modal__weather-type">{card.weather}</span>
           </p>
-          <button
-            className="item-modal__delete-btn"
-            onClick={onDeleteClick}
-            type="button"
-          >
-            Delete item
-          </button>
+          {isOwn && (
+            <button
+              className="item-modal__delete-btn"
+              onClick={onDeleteClick}
+              type="button"
+            >
+              Delete item
+            </button>
+          )}
         </div>
       </div>
     </div>

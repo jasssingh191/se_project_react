@@ -1,4 +1,5 @@
 .item-card {
+  position: relative;
   list-style: none;
   width: 100%;
   max-width: 325px;
@@ -16,6 +17,39 @@
   overflow: hidden;
   margin: 0;
   transition: all 0.2s ease;
+}
+
+.item-card__like-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.item-card__like-icon {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease;
+}
+
+.item-card__like-btn:hover .item-card__like-icon {
+  stroke: #000;
+}
+
+.item-card__like-btn_active .item-card__like-icon {
+  fill: #ff4040;
+  stroke: #ff4040;
 }
 
 .item-card:hover {

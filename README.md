@@ -1,33 +1,34 @@
-⛅ WTWR - What to Wear? A React weather app that recommends clothing based on current conditions. Built with Vite, React, and OpenWeather API. Features
+# WTWR — What to Wear?
 
-Real-time weather data from OpenWeather API Smart clothing recommendations (Hot/Warm/Cold) Add and view custom clothing items Fully responsive design Modern UI with Cabinet Grotesk font
+An app that tells you what to wear based on the weather. Pulls live conditions from OpenWeather, sorts them into hot/warm/cold, and suggests clothing accordingly. You can sign up, add your own items, like things in the shared catalog, and edit your profile.
 
-# Running the Project
+Backend repo: https://github.com/jasssingh191/se_project_express
 
-This project requires two terminals running simultaneously.
+## Stack
 
-**Terminal 1 — Mock API server:**
+React + Vite on the front end, Express/MongoDB on the back end, JWT for auth.
+
+## Running it locally
+
+You'll need Mongo running plus both servers up at the same time.
+
 ```bash
-npm run server
+# terminal 1
+mongod
+
+# terminal 2 (se_project_express)
+npm run dev      # localhost:3001
+
+# terminal 3 (this repo)
+npm run dev       # localhost:3000
 ```
-This runs `json-server --watch db.json --id _id --port 3001`. The `--id _id` flag is required so items use `_id` as the primary key — without it, delete and list keys will not work correctly.
 
-**Terminal 2 — React app:**
-```bash
-npm run dev
-```
+## Temperature cutoffs
 
-# Tech Stack
+- Hot: 86°F and up — light stuff
+- Warm: 66-85°F — casual
+- Cold: under 66°F — layer up
 
-- React 18
-- Vite
-- CSS3 (Flexbox & Grid)
-- OpenWeather API
+## Pitch video
 
-# Temperature Recommendations
-
-- Hot (≥86°F) - Light, breathable clothing
-- Warm (66-85°F) - Casual outfits
-- Cold (<66°F) - Warm, layered clothing
-
-Happy Weather Dressing! 👕⛅
+[Here's a walkthrough](https://drive.google.com/file/d/1ZPrl44adUbryscwPxmeRDKwomLMZC-rI/view?usp=drive_link) of the project and some of the challenges I ran into building it.
