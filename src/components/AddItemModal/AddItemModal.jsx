@@ -6,7 +6,7 @@ const defaultValues = { name: "", imageUrl: "", weather: "hot" };
 function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
   const { values, handleChange, reset } = useForm(defaultValues);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     onAddItem({ name: values.name, imageUrl: values.imageUrl, weather: values.weather }, reset);
   };
 

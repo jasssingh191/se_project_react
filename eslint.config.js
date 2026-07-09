@@ -33,11 +33,7 @@ export default [
         "warn",
         { allowConstantExport: true },
       ],
-      "reach/prop-type": 0,
+      "react/prop-types": "off",
     },
-    overrides: [
-    {
-      files: ["*.js", "*.jsx"],
-      
   },
 ];

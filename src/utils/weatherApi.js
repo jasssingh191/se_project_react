@@ -1,4 +1,4 @@
-import { WEATHER_API_KEY, LOCATION_COORDS } from "./constants";
+import { WEATHER_API_KEY } from "./constants";
 import { checkResponse } from "./request";
 
 function getWeatherCondition(temperature) {

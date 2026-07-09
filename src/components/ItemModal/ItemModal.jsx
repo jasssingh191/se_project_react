@@ -10,7 +10,8 @@ function ItemModal({ isOpen, card, onClose, onDeleteClick }) {
     return null;
   }
 
-  const isOwn = Boolean(currentUser && card.owner === currentUser._id);
+  const ownerId = card.owner?._id ?? card.owner;
+  const isOwn = Boolean(currentUser && ownerId === currentUser._id);
 
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("item-modal")) {

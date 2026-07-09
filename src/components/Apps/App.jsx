@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
@@ -21,7 +21,7 @@ import {
   updateProfile,
 } from "../../utils/api";
 import { signup, signin, checkToken } from "../../utils/auth";
-import { LOCATION_COORDS } from "../../utils/constants";
+import { LOCATION_COORDS, defaultClothingItems } from "../../utils/constants";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import "./App.css";
@@ -34,12 +34,15 @@ function App() {
     condition: "Clear",
     icon: "02d",
   });
-  const [clothingItems, setClothingItems] = useState([]);
+  const [clothingItems, setClothingItems] = useState(() =>
+    defaultClothingItems.map((item) => ({ ...item, imageUrl: item.link, likes: [] }))
+  );
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getWeather(LOCATION_COORDS.latitude, LOCATION_COORDS.longitude)
@@ -150,6 +153,7 @@ function App() {
       .then(() => {
         handleCloseModal();
         resetForm();
+        navigate("/");
       })
       .catch((error) => import.meta.env.DEV && console.error("Registration failed:", error));
   };
@@ -159,6 +163,7 @@ function App() {
       .then(() => {
         handleCloseModal();
         resetForm();
+        navigate("/");
       })
       .catch((error) => import.meta.env.DEV && console.error("Login failed:", error));
   };
