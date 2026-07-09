@@ -22,6 +22,10 @@ npm run dev      # localhost:3001
 # terminal 3 (this repo)
 npm run dev       # localhost:3000
 ```
+## Project Pitch Video
+ 
+ Check out [this video](https://drive.google.com/file/d/1ZPrl44adUbryscwPxmeRDKwomLMZC-rI/view?usp=drive_link), where I describe my 
+ project and some challenges I faced while building it.
 
 ## Temperature cutoffs
 
