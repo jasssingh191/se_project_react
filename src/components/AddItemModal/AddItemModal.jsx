@@ -1,7 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../../hooks/useForm";
 
-const defaultValues = { name: "", imageUrl: "", weather: "hot" };
+const defaultValues = { name: "", imageUrl: "", weather: "" };
 
 function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
   const { values, handleChange, reset } = useForm(defaultValues);
@@ -53,6 +53,7 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
             value="hot"
             checked={values.weather === "hot"}
             onChange={handleChange}
+            required
           />
           Hot
         </label>

@@ -9,6 +9,7 @@ function ModalWithForm({
   buttonText,
   children,
   onSubmit,
+  footer,
 }) {
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("modal")) {
@@ -38,6 +39,7 @@ function ModalWithForm({
           <button className="modal__submit-btn" type="submit">
             {buttonText}
           </button>
+          {footer}
         </form>
       </div>
     </div>

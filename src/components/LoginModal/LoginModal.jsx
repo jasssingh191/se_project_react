@@ -3,7 +3,7 @@ import useForm from "../../hooks/useForm";
 
 const defaultValues = { email: "", password: "" };
 
-function LoginModal({ isOpen, onCloseModal, onLogin }) {
+function LoginModal({ isOpen, onCloseModal, onLogin, onRegisterClick }) {
   const { values, handleChange, reset } = useForm(defaultValues);
 
   const handleSubmit = () => {
@@ -18,6 +18,15 @@ function LoginModal({ isOpen, onCloseModal, onLogin }) {
       name="login"
       buttonText="Log in"
       onSubmit={handleSubmit}
+      footer={
+        <button
+          type="button"
+          className="modal__switch-btn"
+          onClick={onRegisterClick}
+        >
+          or Sign up
+        </button>
+      }
     >
       <label className="modal__label">
         Email

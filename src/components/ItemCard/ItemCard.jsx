@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import "./ItemCard.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import likeBtnDefault from "../../assets/Like-btn-State=Default.png";
+import likeBtnLiked from "../../assets/Like-btn-State=Liked.png";
 
 function ItemCard({ item, onCardClick, onCardLike }) {
   const currentUser = useContext(CurrentUserContext);
@@ -28,11 +30,13 @@ function ItemCard({ item, onCardClick, onCardLike }) {
           className={itemLikeButtonClassName}
           onClick={handleLike}
           type="button"
-          aria-label="Like item"
+          aria-label={isLiked ? "Unlike item" : "Like item"}
         >
-          <svg viewBox="0 0 24 24" className="item-card__like-icon">
-            <path d="M12 21s-7.5-4.6-10-9.3C.4 8.6 2 5 5.5 5c2 0 3.5 1.2 4.5 2.7C11 6.2 12.5 5 14.5 5 18 5 19.6 8.6 22 11.7 19.5 16.4 12 21 12 21z" />
-          </svg>
+          <img
+            src={isLiked ? likeBtnLiked : likeBtnDefault}
+            alt={isLiked ? "Unlike item" : "Like item"}
+            className="item-card__like-icon"
+          />
         </button>
       )}
       <img
