@@ -14,11 +14,13 @@
     opacity 0.3s,
     visibility 0.3s;
   z-index: 100;
+  pointer-events: none;
 }
 
 .modal_is-opened {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .modal__content {
