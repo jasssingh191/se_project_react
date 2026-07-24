@@ -1,6 +1,8 @@
 import { checkResponse } from "./request";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = import.meta.env.PROD
+  ? "https://api.wtwr.hosts.name"
+  : "http://localhost:3001";
 
 export function getItems() {
   return fetch(`${baseUrl}/items`).then(checkResponse);
